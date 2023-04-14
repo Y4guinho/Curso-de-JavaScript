@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localizando...</title>
+    <style>
+        body {
+            background-color: rgb(63, 61, 61);
+            color: white;
+            font: normal 14pt Arial;
+        }
+    </style>
+    <h1>Insira o seu país de origem</h1>
+    <p>Qual é o seu país de origem?</p>
+</head>
+<body>
+    <input type="text" name="txt" id="txt">
+    <input type="button" value="localizar" onclick="localizar()">
+
+    <p><div id = 'res'>Resultado</div></p>
+    
+    <script>
+        function localizar() {
+            var pais = window.document.getElementById('txt').value
+            var resto = window.document.getElementById('res')
+
+            resto.innerHTML=`Você nasceu no <strong>${pais}</strong>.`
+            if(pais!='Brasil') {
+                resto.innerHTML+=`<p>Você é estrangeiro!</p>`
+            }else {
+                resto.innerHTML+=`<p>Você é brasileiro!</p>`
+            }
+
+        }
+    </script>
+</body>
+</html>

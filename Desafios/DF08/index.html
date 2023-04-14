@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            width: 150px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <button id="calcular" onclick="calcular()">Desconto de 10%</button>
+    <div id="res"><p>Clique no botão acima para inciar.</p></div>
+
+    <script>
+        function calcular() {
+            let r = document.getElementById('res')
+            let produto = prompt('Qual é o produto que está comprando?')
+            let preço =prompt(`Qual é o preço de ${produto}?`)
+            let R$ = parseFloat(preço.replace(',','.'))
+            let p = new Intl.NumberFormat('pt-br',{style:"currency",currency:'BRL'}).format(R$);
+
+            let desc = R$ * 10/100
+            let vd = new Intl.NumberFormat('pt-br',{style:"currency",currency:'BRL'}).format(desc);
+
+            let total = R$ - desc
+            let t = new Intl.NumberFormat('pt-br',{style:"currency",currency:'BRL'}).format(total);
+
+            if(preço!=0) {
+                r.innerHTML=`<h2>Calculando desconto de 10% para ${produto}</h2>`
+                r.innerHTML+=`O preço original era ${p}`
+                r.innerHTML+=`<p>Você acaba de ganhar ${vd} de desconto (-10%).</p>`
+                r.innerHTML+=`No fim, você vai pagar ${t} no produto ${produto}.`
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>

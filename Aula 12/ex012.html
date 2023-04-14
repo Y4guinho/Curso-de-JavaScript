@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bom dia, Boa tarde, Boa noite</title>
+
+</head>
+<body>
+    <h1>Verifique as horas aqui</h1>
+    
+    <input type="number" name="hr" id="hr">
+    <input type="button" value="Verificar" onclick="Verificar()">
+
+    <p><div id="res">Resultado...</div></p>
+
+    <script>
+        function Verificar() {
+            var hora = window.document.getElementById('hr').value
+           // var agora = new Date()
+            //var hora = hr.getHours()
+            var r= window.document.getElementById('res')
+            var n1=Number(hora.value)
+
+            r.innerHTML=`São exatamente ${hora} horas.`
+            if (hora<=5) {
+                r.innerHTML+=`<p>Boa madrugada!</p>`
+            } else if (hora<=11) {
+                r.innerHTML+=`<p>Bom dia!</p>`
+            } else if (hora<=17) {
+                r.innerHTML+=`<p>Boa tarde!</p>`
+            } else {
+                r.innerHTML+=`<p>Boa noite!</p>`
+            }
+
+        }
+    </script>
+</body>
+</html>

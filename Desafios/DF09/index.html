@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste de Salário</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            width: 150px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <button id="calcular" onclick="calcular()">Reajustar Salário</button>
+    <div id="res"><p>Clique no botão acima para inciar.</p></div>
+
+    <script>
+        function calcular() {
+            let r = document.getElementById('res')
+            let nome = prompt('Qual é o nome do funcionário?')
+
+            let salario =prompt(`Qual é o salário de ${nome}?`)
+            let R$ = parseFloat(salario.replace(',','.'))
+            let p = new Intl.NumberFormat('pt-br',{style:"currency",currency:'BRL'}).format(R$);
+
+            let reajuste = prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`)
+
+            let aumento = R$ * reajuste / 100
+            let aum = new Intl.NumberFormat('pt-br',{style:"currency",currency:'BRL'}).format(aumento);
+
+            let total = parseInt(R$) + parseInt(aumento)
+            let t = new Intl.NumberFormat('pt-br',{style:"currency",currency:'BRL'}).format(total);
+
+            if(salario!=0) {
+                r.innerHTML=`<h2>${nome} recebeu um aumento salárial!</h2>`
+                r.innerHTML+=`O salário atual era ${p}`
+                r.innerHTML+=`<p>Como o aumento de ${reajuste}%, o salário vai aumentar ${aum} no próximo mês.</p>`
+                r.innerHTML+=`<p>E a parir daí, ${nome} vai passar a ganhar ${t}.</p>`
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <button id="b1" onclick="clicar()">Converter</button>
+    <div id="res"><p>Clique no botão acima para iniciar</p></div>
+
+    <script>
+        function clicar() {
+            let temp = window.prompt('Digite uma temperatura em °C (Celsius)')
+            let f = temp * 1.8 + 32
+            let k = parseInt(temp) + parseInt(273)
+
+            if (temp!=0) {
+                res.innerHTML=`<h2>A temperatura de ${temp}°C. corresponde a...</h2>`
+                res.innerHTML+=`<p>${f}°F (Fahrenheit)</p>`
+                res.innerHTML+=`<p>${k}°K (Kelvin)</p>`
+        
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

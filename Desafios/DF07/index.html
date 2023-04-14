@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> US$</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Conversor R$  → US$</h1>
+    <button id="b1" onclick="clicar()">Converter</button>
+    <div id="res"><p>Clique no botão acima para iniciar</p></div>
+
+    <script>
+        let cota = prompt('Antes de mais nada. Quanto está a cotação do dolar hoje?')
+        let cotaçao = Number(cota)
+        let r = document.getElementById('res')
+
+        function clicar() {
+            let carteira = prompt('Quantos R$ você tem na carteira?')
+            let dolar = carteira * cota
+            let c = new Intl.NumberFormat('pt-br',{style:"currency",currency:'BRL'}).format(cotaçao);
+            let ct = new Intl.NumberFormat('pt-br',{style:"currency",currency:'BRL'}).format(carteira);
+            let d = new Intl.NumberFormat('en',{style:"currency",currency:'USD'}).format(dolar);
+
+            if(cota!=0 && carteira!=0) {
+                r.innerHTML=`<p>A cotação do dolar está ${c} e você irá converter ${ct}, então terá em dolar ${d}.</p>`
+            }
+        }
+    </script>
+</body>
+</html>
