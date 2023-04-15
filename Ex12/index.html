@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bom dia, Boa tarde, Boa noite</title>
-
+    <style>
+        body {
+            background-color: rgb(87, 86, 86);
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <h1>Verifique as horas aqui</h1>
@@ -23,14 +29,17 @@
             var r= window.document.getElementById('res')
             var n1=Number(hora.value)
 
-            r.innerHTML=`São exatamente ${hora} horas.`
             if (hora<=5) {
+                r.innerHTML=`São exatamente ${hora} horas da madrugada.`
                 r.innerHTML+=`<p>Boa madrugada!</p>`
             } else if (hora<=11) {
+                r.innerHTML=`São exatamente ${hora} horas da manhã.`
                 r.innerHTML+=`<p>Bom dia!</p>`
             } else if (hora<=17) {
+                r.innerHTML=`São exatamente ${hora} horas da tarde.`
                 r.innerHTML+=`<p>Boa tarde!</p>`
             } else {
+                r.innerHTML=`São exatamente ${hora} horas da noite.`
                 r.innerHTML+=`<p>Boa noite!</p>`
             }
 

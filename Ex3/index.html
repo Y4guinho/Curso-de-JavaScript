@@ -8,22 +8,31 @@
     <title>Meu primeiro programa</title>
     <style>
     body {
-        background-color: rgb(80, 79, 79);
+        background-color: rgb(80, 79, 79);/*Comentario para CSS*/
         color: white;
         font: normal 20pt Arial;
     }
     h1 {
         color: rgb(233, 211, 11);
     }
+
+    button {
+        height: 60px;
+        width: 150px;
+        border-radius: 10px;
+    }
     </style>
-    <script>
-    var n1= Number(window.prompt('Digite um número'))
-    var n2= Number(window.prompt('Digite outro número'))
-    var s= n1 + n2 
-    window.alert(`A soma entre ${n1} e ${n2} é igual a ${s}`)
-        </script>
-</body>
-<h1>Olá, mundo!</h1>
-<p>Eu me livrei da Maldição!!</p>
+</head>
+<body>
+<h1>Trabalhando com dados v1.0</h1>
+
+<button id="btn" onclick="clicar()">Clique para começar</button>
+
+<script>
+    function clicar() {
+        var nome= window.prompt('Qual é o seu nome?')
+    window.alert('É um prazer em conhece-lo, '+ nome + "!")
+    }
+</script>
 </body>
 </html>
